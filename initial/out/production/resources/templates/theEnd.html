@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Final response</title>
+</head>
+<body>
+
+<h1 th:text = "${welcomeMessage}"> </h1>
+<h1 th:text = "${message}"> </h1>
+
+<p th:text = ${translation}></p>
+
+
+<div class="form-group row">
+    <select class="form-control" id="status" name="status">
+        <option th:each="lang : ${langEnum}"
+                th:value="${lang}"
+                th:text="${lang}"
+                th:selected="${lang}"/>
+    </select>
+</div>
+
+<div class="form-group row">
+    <select class="form-control" id="langFrom" name="langFrom">
+        <option th:each="lang : ${langFrom}"
+                th:value="${lang}"
+                th:text="${lang}"
+                th:selected="${lang}"/>
+    </select>
+</div>
+
+<div class="form-group row">
+    <select class="form-control" id="langTo" name="langTo">
+        <option th:each="lang : ${langTo}"
+                th:value="${lang}"
+                th:text="${lang}"
+                th:selected="${lang}"/>
+    </select>
+</div>
+
+</body>
+</html>
